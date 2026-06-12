@@ -1,0 +1,411 @@
+/* ===========================
+   全局样式 - 重置和基础设置
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   Body 样式 - 主体背景和布局
+   =========================== */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+}
+
+/* ===========================
+   容器样式 - 主要内容容器
+   =========================== */
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    max-width: 600px;
+    width: 100%;
+    animation: slideIn 0.5s ease-out;
+}
+
+/* ===========================
+   容器进入动画
+   =========================== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   标题样式
+   =========================== */
+h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* ===========================
+   副标题样式
+   =========================== */
+.subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   笑话卡片样式 - 显示笑话的主要区域
+   =========================== */
+.joke-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ===========================
+   笑话类别标签样式
+   =========================== */
+.joke-type {
+    display: inline-block;
+    background: #667eea;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    width: fit-content;
+    text-transform: uppercase;
+}
+
+/* ===========================
+   笑话内容容器样式
+   =========================== */
+.joke-content {
+    margin-bottom: 15px;
+}
+
+/* ===========================
+   笑话问题/开头部分样式
+   =========================== */
+.joke-setup {
+    font-size: 1.2em;
+    color: #333;
+    font-weight: 500;
+    line-height: 1.6;
+    min-height: 50px;
+}
+
+/* ===========================
+   笑话结尾/答案部分样式
+   =========================== */
+.joke-delivery {
+    font-size: 1.1em;
+    color: #764ba2;
+    font-weight: bold;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 2px solid rgba(118, 75, 162, 0.3);
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* ===========================
+   显示/隐藏答案按钮样式
+   =========================== */
+.toggle-btn {
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.toggle-btn:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(243, 156, 18, 0.4);
+}
+
+.toggle-btn:active {
+    transform: translateY(0);
+}
+
+/* ===========================
+   淡入动画
+   =========================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   按钮组容器样式
+   =========================== */
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+/* ===========================
+   按钮基础样式
+   =========================== */
+.joke-btn,
+.random-btn,
+.copy-btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+/* ===========================
+   获取笑话按钮样式 - 绿色
+   =========================== */
+.joke-btn {
+    background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+    grid-column: 1 / -1;
+}
+
+.joke-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(74, 222, 128, 0.4);
+}
+
+.joke-btn:active {
+    transform: translateY(-1px);
+}
+
+.joke-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ===========================
+   随机类别按钮样式 - 蓝色
+   =========================== */
+.random-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.random-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.random-btn:active {
+    transform: translateY(-1px);
+}
+
+/* ===========================
+   复制笑话按钮样式 - 红色
+   =========================== */
+.copy-btn {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+}
+
+.copy-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(239, 68, 68, 0.4);
+}
+
+.copy-btn:active {
+    transform: translateY(-1px);
+}
+
+/* ===========================
+   笑话历史记录部分样式
+   =========================== */
+.history-section {
+    background: #f0f0f0;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.history-section h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+/* ===========================
+   历史记录列表样式
+   =========================== */
+.history-list {
+    list-style: none;
+}
+
+.history-list li {
+    background: white;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+    animation: slideIn 0.3s ease-out;
+}
+
+.history-list li.empty-history {
+    border-left: none;
+    color: #999;
+    font-style: italic;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ===========================
+   加载动画容器样式
+   =========================== */
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 30px;
+}
+
+/* ===========================
+   加载转圈动画
+   =========================== */
+.spinner {
+    border: 4px solid #f0f0f0;
+    border-top: 4px solid #667eea;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loader p {
+    color: #667eea;
+    font-weight: bold;
+}
+
+/* ===========================
+   错误提示消息样式
+   =========================== */
+.error-message {
+    background: #fee;
+    border: 2px solid #ef4444;
+    border-radius: 8px;
+    padding: 15px;
+    color: #dc2626;
+    font-weight: bold;
+    margin-bottom: 20px;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* ===========================
+   响应式设计 - 平板设备
+   =========================== */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .joke-card {
+        min-height: 120px;
+        padding: 20px;
+    }
+
+    .button-group {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .joke-btn {
+        grid-column: 1;
+    }
+}
+
+/* ===========================
+   响应式设计 - 手机设备
+   =========================== */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .joke-card {
+        padding: 15px;
+        min-height: 100px;
+    }
+
+    .joke-setup {
+        font-size: 1.1em;
+    }
+
+    .joke-delivery {
+        font-size: 1em;
+    }
+
+    .history-section {
+        padding: 15px;
+    }
+}
